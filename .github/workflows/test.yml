@@ -36,3 +36,24 @@ jobs:
         run: |
           cat lab01/tests/arq${{ matrix.ci_node_index }}.in | python lab01/lab01.py > lab01/tests/res${{ matrix.ci_node_index }}.out
           diff lab01/tests/res${{ matrix.ci_node_index }}.out lab01/tests/arq${{ matrix.ci_node_index }}.out
+
+  lab02:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # set N-1 indexes for parallel jobs
+        # When you run 2 parallel jobs then first job will have index 0, the second job will have index 1 etc
+        ci_node_index: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Lab01 Test ${{ matrix.ci_node_index }}
+        run: |
+          cat lab02/tests/arq${{ matrix.ci_node_index }}.in | python lab02/lab02.py > lab02/tests/res${{ matrix.ci_node_index }}.out
+          diff lab02/tests/res${{ matrix.ci_node_index }}.out lab02/tests/arq${{ matrix.ci_node_index }}.out
