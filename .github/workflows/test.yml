@@ -4,25 +4,24 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Triggers the workflow on push or pull request events
   push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  lab01:
+  lab:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
+        # lab number to test against
+        ci_lab: ["01", "02"]
         # set N-1 indexes for parallel jobs
         # When you run 2 parallel jobs then first job will have index 0, the second job will have index 1 etc
         ci_node_index: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
@@ -32,28 +31,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Lab01 Test ${{ matrix.ci_node_index }}
+      - name: Lab${{ matrix.ci_lab }} Test ${{ matrix.ci_node_index }}
         run: |
-          cat lab01/tests/arq${{ matrix.ci_node_index }}.in | python lab01/lab01.py > lab01/tests/res${{ matrix.ci_node_index }}.out
-          diff lab01/tests/res${{ matrix.ci_node_index }}.out lab01/tests/arq${{ matrix.ci_node_index }}.out
-
-  lab02:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        # set N-1 indexes for parallel jobs
-        # When you run 2 parallel jobs then first job will have index 0, the second job will have index 1 etc
-        ci_node_index: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      - name: Lab01 Test ${{ matrix.ci_node_index }}
-        run: |
-          cat lab02/tests/arq${{ matrix.ci_node_index }}.in | python lab02/lab02.py > lab02/tests/res${{ matrix.ci_node_index }}.out
-          diff lab02/tests/res${{ matrix.ci_node_index }}.out lab02/tests/arq${{ matrix.ci_node_index }}.out
+          cat lab${{ matrix.ci_lab }}/tests/arq${{ matrix.ci_node_index }}.in | python lab${{ matrix.ci_lab }}/lab${{ matrix.ci_lab }}.py > lab${{ matrix.ci_lab }}/tests/res${{ matrix.ci_node_index }}.out
+          diff lab${{ matrix.ci_lab }}/tests/res${{ matrix.ci_node_index }}.out lab${{ matrix.ci_lab }}/tests/arq${{ matrix.ci_node_index }}.out
