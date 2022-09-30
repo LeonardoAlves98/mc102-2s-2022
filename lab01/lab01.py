@@ -1,18 +1,11 @@
-###################################################
-# MC102 - Algoritmos e Programação de Computadores
-# Laboratório 1 - Aritmética com Inteiros
-# Nome: 
-# RA: 
-###################################################
-
-a = int(input())
-b = int(input())
+a = int(input("1"))
+b = int(input("9"))
 
 print("a =", a)
-print("b  =", b)
-print("a + b =", a + b)
-print("a - b =", b - a)
-print("a * b =", a * b)
-print("a ** b =", a ** b)
-print("a % b =", a % b)
-print("a // b =", a // b)
+print("b =", b)
+print("a + b =", a+b)
+print("a - b =", a-b)
+print("a * b =", a*b)
+print("a ** b =", a**b)
+print("a // b =", a//b)
+print("a % b =", a%b)
