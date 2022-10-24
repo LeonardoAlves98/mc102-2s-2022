@@ -20,8 +20,5 @@ if space < blue:
     chegou = True
 else:
     chegou = False
-      
-
-
 # Impressão da resposta
 print(chegou) 
