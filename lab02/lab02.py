@@ -20,7 +20,8 @@ if space < blue:
     chegou = True
 else:
     chegou = False
-print(chegou)       
+      
 
 
 # Impressão da resposta
+print(chegou) 
