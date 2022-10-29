@@ -13,7 +13,7 @@ d2 = int(input(""))
 v2 = int(input(""))
 # Cálculo do tempo total gasto por cada espaçonave
 space = d1 / v1
-blue = d2 / (v2 * t)
+blue = d2 / (v2 * (t*24))
 
 if space < blue:
     chegou = True
