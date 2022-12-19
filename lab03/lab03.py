@@ -7,11 +7,11 @@
 
 # leitura de dados
 
-Dia = int(input(': '))
-Hora = str(input(': '))
-Minuto = str(input(': '))
-Estudante = str(input(':'))
-Forma_pag = str(input(':'))
+Dia = int(input())
+Hora = str(input())
+Minuto = str(input())
+Estudante = str(input())
+Forma_pag = str(input())
 # valor do ingresso inteiro
 ingresso = 0
 sessao = 1829
