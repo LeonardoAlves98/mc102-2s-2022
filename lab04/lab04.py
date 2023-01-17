@@ -16,13 +16,13 @@ while True:
             if estoque > 0:
                 if (estoque + num) < 0:
                     unidade = num
-                    print(f'Quantidade indiponível para a venda {unidade} unidades.')
+                    print(f'Quantidade indiponível para a venda de {unidade} unidades.')
                 else:
                     estoque += num
                     vendas +=1
             else:
                 unidade = num
-                print(f'Quantidade indiponível para a venda {unidade} unidades.')
+                print(f'Quantidade indiponível para a venda de {unidade} unidades.')
     else:
         break
 # impressão da saída
