@@ -26,5 +26,5 @@ while True:
     else:
         break
 # impressão da saída
-print(f'Quatidade de vendas realizdas: {vendas}')
+print(f'Quantidade de vendas realizdas: {vendas}')
 print(f'Quantidade do estoque: {estoque}')
