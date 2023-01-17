@@ -8,7 +8,7 @@
 # leitura da sequência de compras e vendas
 estoque = unidade = vendas = 0
 while True:
-    num = int(input(':'))
+    num = int(input())
     if num != 0:
         if num > 0:
             estoque += num
