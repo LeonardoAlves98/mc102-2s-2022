@@ -26,7 +26,7 @@ for c in range(D):
         horas_trabalhadas += (hora_final - hora_inicio)
 # Calculo do valor devido ao funcionário
 if horas_trabalhadas > 44:
-    horas_extras += (horas_trabalhadas - 44)
+    horas_extras = (horas_trabalhadas - 44)
 valor = (horas_trabalhadas * V) + (V/2 * horas_extras)
 # Impressão da saída
 print("Horas trabalhadas:", horas_trabalhadas)
