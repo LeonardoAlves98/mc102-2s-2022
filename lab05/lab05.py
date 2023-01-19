@@ -21,9 +21,10 @@ for c in range(D):
         hora_inicio = int(input())
         hora_final = int(input())
         total_dia += (hora_final - hora_inicio )
-        if total_dia > 8:
-            horas_extras += (total_dia - 8)
         horas_trabalhadas += (hora_final - hora_inicio)
+if total_dia > 8:
+    horas_extras += (total_dia - 8)
+    
 # Calculo do valor devido ao funcionário
 if horas_trabalhadas > 44:
     horas_extras = (horas_trabalhadas - 44)
