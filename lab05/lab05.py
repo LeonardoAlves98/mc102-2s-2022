@@ -12,8 +12,9 @@ V = int(input())
 D = int(input())
 
 # Leitora e processamento dos periodos de trabalho de cada dia
-horas_extras = 0
 horas_trabalhadas = 0
+horas_extras_dia = 0
+
 for c in range(D):
     periodo = int(input())
     total_dia = 0
@@ -23,11 +24,14 @@ for c in range(D):
         total_dia += (hora_final - hora_inicio )
         horas_trabalhadas += (hora_final - hora_inicio)
     if total_dia > 8:
-        horas_extras += (total_dia - 8)
+        horas_extras_dia += (total_dia - 8)
     
 # Calculo do valor devido ao funcionário
-if (horas_trabalhadas - horas_extras)> 44:
-    horas_extras = horas_trabalhadas - 44
+horas_extras_semana = horas_trabalhadas - 44
+if horas_extras_semana > horas_extras_dia:
+    horas_extras = horas_extras_semana
+else:
+    horas_extras = horas_extras_dia
 valor = (horas_trabalhadas * V) + (V/2 * horas_extras)
 # Impressão da saída
 print("Horas trabalhadas:", horas_trabalhadas)
