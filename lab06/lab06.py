@@ -24,7 +24,7 @@ while True:
     else:
         break
 # Impressão da saída
-if torre = ok:
+if torre == ok:
     print('Torre estavel')
 else:
     print('Torre instavel')
