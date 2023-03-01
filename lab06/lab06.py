@@ -7,7 +7,8 @@
 
 # Leitura da torre de panquecas
 torre = [int(panqueca) for panqueca in input().split()]
-
+ok = torre
+ok.sort()
 # Leitura e processamento dos movimentos
 l = []
 while True:
@@ -22,12 +23,8 @@ while True:
             count += 1
     else:
         break
-next = 1
-for x in range(len(torre)-1):
-    if x < torre[next]:
-        next +=1
 # Impressão da saída
-if next == len(torre):
+if torre = ok:
     print('Torre estavel')
 else:
     print('Torre instavel')
